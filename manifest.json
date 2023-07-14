@@ -19,7 +19,7 @@
     "128": "images/icon128.png"
   },
   "author": "Daneus",
-  "permissions": ["activeTab", "scripting", "tabs"],
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
