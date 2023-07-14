@@ -1,17 +1,19 @@
 const checkbox = document.getElementById('vanish_toggle');
 
-const getTabId = async () => {
+async function getTabId() {
   let queryOptions = { active: true, lastFocusedWindow: true };
   let [tab] = await chrome.tabs.query(queryOptions);
   return tab.id;
-};
+}
 
-(async () => {
+async function setCheckbox() {
   const { vanish } = await chrome.storage.local.get(['vanish']);
   if (vanish) {
     checkbox.checked = vanish;
   }
-})();
+}
+
+setCheckbox();
 
 document.addEventListener('DOMContentLoaded', () => {
   checkbox.addEventListener('change', async () => {

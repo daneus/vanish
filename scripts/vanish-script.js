@@ -1,4 +1,4 @@
-(() => {
+function executeToggle() {
   const endScreenElements = document.querySelectorAll('.ytp-ce-element');
 
   endScreenElements.forEach(async (element) => {
@@ -9,4 +9,6 @@
       element.style.opacity = '1';
     }
   });
-})();
+}
+
+executeToggle();
