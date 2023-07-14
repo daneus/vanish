@@ -25,5 +25,8 @@
       "matches": ["https://*.youtube.com/*"],
       "js": ["scripts/vanish-script.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
