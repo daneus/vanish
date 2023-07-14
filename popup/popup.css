@@ -7,7 +7,60 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f1f1f1;
+}
+
 .title {
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 22px;
+  color: black;
+  padding: 12px 12px 5px;
+}
+
+.circle-container {
+  margin: 0 auto 12px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #808080;
+}
+
+.circle-container.activated {
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #007bde;
+}
+
+.circle-label {
+  border-radius: 15px;
+  padding: 0px 3px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.circle-label > input {
+  position: absolute;
+  opacity: 0;
+  height: 0px;
+  width: 0px;
+}
+.circle {
+  border-radius: 12px;
+  background-color: white;
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  transition: all 0.1s ease;
+}
+
+.circle.activated {
+  transform: translateX(30px);
 }

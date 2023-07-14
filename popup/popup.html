@@ -4,8 +4,14 @@
   </head>
   <body>
     <div class="title">Vanish</div>
-    <input type="checkbox" name="vanish_toggle" id="vanish_toggle" />
-    <label for="vanish_toggle">Activate</label>
+
+    <div class="circle-container" >
+      <label for="vanish_toggle" class="circle-label">
+        <input type="checkbox" id="vanish_toggle" name='circle'></input>
+        <span class="circle"></span>
+      </label>
+    </div>
+    
     <script src="/popup/popup.js"></script>
     <script src="/scripts/vanish-script.js"></script>
   </body>

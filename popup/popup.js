@@ -1,3 +1,7 @@
+const circleContainer = document.querySelector('.circle-container');
+
+const circle = document.querySelector('.circle');
+
 const checkbox = document.getElementById('vanish_toggle');
 
 async function getTabId() {
@@ -10,6 +14,8 @@ async function setCheckbox() {
   const { vanish } = await chrome.storage.local.get(['vanish']);
   if (vanish) {
     checkbox.checked = vanish;
+    circleContainer.classList.add('activated');
+    circle.classList.add('activated');
   }
 }
 
@@ -17,6 +23,9 @@ setCheckbox();
 
 document.addEventListener('DOMContentLoaded', () => {
   checkbox.addEventListener('change', async () => {
+    circleContainer.classList.toggle('activated');
+    circle.classList.toggle('activated');
+
     const { vanish } = await chrome.storage.local.get(['vanish']);
     chrome.storage.local.set({ vanish: !vanish });
     if (!vanish) {
