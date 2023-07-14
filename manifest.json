@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Vanish",
+  "version": "1.0.0",
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "24": "images/icon24.png",
+      "32": "images/icon32.png"
+    },
+    "default_title": "Click to open"
+  },
+  "default_locale": "en",
+  "description": "Web browser extension that allows the user to remove a YouTube video end screen elements.",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "author": "Daneus"
+}
