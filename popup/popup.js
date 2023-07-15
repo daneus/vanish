@@ -33,9 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       chrome.action.setBadgeText({ text: '' });
     }
-    chrome.scripting.executeScript({
-      target: { tabId: await getTabId() },
-      files: ['/scripts/vanish-script.js'],
+
+    chrome.tabs.query({}, function (tabs) {
+      tabs.forEach(function (tab) {
+        console.log('Tab:' + JSON.stringify(tab));
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          files: ['/scripts/vanish-script.js'],
+        });
+      });
     });
   });
 });
