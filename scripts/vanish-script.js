@@ -4,9 +4,9 @@ function executeToggle() {
   endScreenElements.forEach(async (element) => {
     const { vanish } = await chrome.storage.local.get(['vanish']);
     if (vanish) {
-      element.style.opacity = '0';
+      element.style.display = 'none';
     } else {
-      element.style.opacity = '1';
+      element.style.display = 'block';
     }
   });
 }

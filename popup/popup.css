@@ -1,21 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'YoutubeSans';
+  src: url('../fonts/YoutubeSansBold.woff2') format('woff2');
+}
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'YoutubeSans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f1f1f1;
+  background: linear-gradient(
+    to right,
+    #144977,
+    #0f3057 50%,
+    #121212 50%,
+    #121212 50.01%,
+    #303030
+  );
+  background-size: 200% 100%;
+  background-position: right;
+  transition: background-position 0.3s ease;
+}
+
+body.activated {
+  background-position: left;
 }
 
 .title {
   font-weight: 700;
-  font-size: 22px;
-  color: black;
-  padding: 12px 12px 5px;
+  font-size: 25px;
+  padding: 12px 15px 8px;
+  color: #808080;
+  letter-spacing: -0.8px;
+  transition: all 0.2s ease;
+}
+
+.title.activated {
+  color: #3da8ff;
 }
 
 .circle-container {
