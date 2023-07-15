@@ -40,8 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     chrome.tabs.query({}, function (tabs) {
-      tabs.forEach(function (tab) {
-        console.log('Tab:' + JSON.stringify(tab));
+      const youtubeTabs = tabs.filter((tab) =>
+        /^https:\/\/.*\.youtube\.com\/.*/.test(tab.url)
+      );
+      youtubeTabs.forEach(function (tab) {
         chrome.scripting.executeScript({
           target: { tabId: tab.id },
           files: ['/scripts/vanish-script.js'],
